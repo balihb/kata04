@@ -12,3 +12,9 @@ eclipse {
 		natures 'org.eclipse.jdt.groovy.core.groovyNature'
 	}
 }
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
