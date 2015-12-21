@@ -1,3 +1,41 @@
+apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+
+group = 'kata04'
+version = '1.0prealpha'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url "${project.rootProject.projectDir}/repo"
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes("Implementation-Title": "Gradle",
+                   "Implementation-Version": version)
+    }
+}
 
 repositories { mavenCentral() }
+
+apply plugin:'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: new File("${project.rootProject.projectDir}/dist").toURI().toString())
+        }
+    }
+}

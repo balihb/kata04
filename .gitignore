@@ -2,6 +2,9 @@
 
 .gradle
 build/
+dist/
+repo/
+.cache-main
 
 # Ignore Gradle GUI config
 gradle-app.setting

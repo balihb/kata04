@@ -1,3 +1,8 @@
 apply from: new File(project.rootProject.projectDir, 'java-project.gradle').absolutePath
 
 dependencies { compile project(':common') }
+
+test {
+	systemProperty 'weather.file.name', new File(project.rootProject.projectDir, 'weather.dat').absolutePath
+	systemProperty 'wrong.weather.file.name', new File(project.rootProject.projectDir, 'wrong-weather.dat').absolutePath
+}

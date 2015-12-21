@@ -1,5 +1,9 @@
 apply from: new File(project.rootProject.projectDir, 'common-config.gradle').absolutePath
 
+apply plugin: 'application'
+
+mainClassName = 'dot.kata04.cmd.Main$'
+
 apply plugin: 'scala'
 
 configurations { scalalib }
@@ -9,8 +13,9 @@ dependencies {
 	compile project(':part2')
 
 	compile 'com.github.scopt:scopt_2.11:3.3.0'
+	compile 'org.scala-lang:scala-library:2.11.7'
 
-	scalalib 'org.scala-lang:scala-library:2.11.4'
+	scalalib 'org.scala-lang:scala-library:2.11.7'
 }
 
 eclipse {
