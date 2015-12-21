@@ -1,0 +1,27 @@
+apply from: new File(project.rootProject.projectDir, 'common-config.gradle').absolutePath
+
+apply plugin: 'scala'
+
+configurations { scalalib }
+
+dependencies {
+	compile project(':part1')
+	compile project(':part2')
+
+	compile 'com.github.scopt:scopt_2.11:3.3.0'
+
+	scalalib 'org.scala-lang:scala-library:2.11.4'
+}
+
+eclipse {
+	project {
+		natures 'org.scala-ide.sdt.core.scalanature'
+		buildCommand 'org.scala-ide.sdt.core.scalabuilder'
+	}
+}
+
+eclipse {
+	classpath {
+		minusConfigurations += [configurations.scalalib]
+	}
+}

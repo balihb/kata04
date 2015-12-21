@@ -1,3 +1,5 @@
+.gitignore
+
 .gradle
 build/
 
@@ -60,3 +62,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Eclipse files
+.project
+.classpath
+.settings

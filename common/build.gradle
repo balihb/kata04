@@ -1,0 +1,1 @@
+apply from: new File(project.rootProject.projectDir, 'java-project.gradle').absolutePath
